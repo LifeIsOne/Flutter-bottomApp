@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class FirstPage extends StatelessWidget {
   const FirstPage({
@@ -7,6 +7,15 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(child: Text("First Page"));
+    return ListView.builder(
+      itemCount: 10,
+      itemBuilder: (context, index) {
+        return ListTile(
+          title: Text("메인제목 ${index}"),
+          subtitle: Text("서브제목"),
+          leading: Icon(Icons.person),
+        );
+      },
+    );
   }
 }
