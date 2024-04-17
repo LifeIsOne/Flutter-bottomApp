@@ -7,15 +7,15 @@ class FirstPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      itemCount: 10,
-      itemBuilder: (context, index) {
-        return ListTile(
-          title: Text("메인제목 ${index}"),
-          subtitle: Text("서브제목"),
-          leading: Icon(Icons.person),
-        );
-      },
-    );
+    return ListView.separated(
+        itemBuilder: (context, index) {
+          return ListTile(
+            title: Text("메인제목 ${index}"),
+            subtitle: Text("서브제목"),
+            leading: Icon(Icons.person),
+          );
+        },
+        separatorBuilder: (context, index) => Divider(),
+        itemCount: 10);
   }
 }

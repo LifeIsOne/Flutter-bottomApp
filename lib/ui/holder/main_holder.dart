@@ -1,13 +1,9 @@
-import 'package:bottom_app/ui/holder/second/second_page.dart';
+import 'package:bottom_app/ui/holder/first/first_page.dart';
 import 'package:bottom_app/ui/holder/third/third_page.dart';
 import 'package:flutter/material.dart';
 
-import 'first/first_page.dart';
-
 class MainHolder extends StatefulWidget {
-  const MainHolder({
-    super.key,
-  });
+  const MainHolder({super.key});
 
   @override
   State<MainHolder> createState() => _MainHolderState();
@@ -31,15 +27,15 @@ class _MainHolderState extends State<MainHolder> {
       bottomNavigationBar: BottomNavigationBar(
         showSelectedLabels: false,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.orange,
+        selectedItemColor: Colors.deepOrange,
         unselectedItemColor: Colors.black,
         currentIndex: _index,
-        // 선택된 아이콘 색상표시
+        // 선택된 아이콘에 색상 보여주기
         items: [
-          // item의 갯수는 최소 2개, 최대 5개
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: "1"),
-          BottomNavigationBarItem(icon: Icon(Icons.face), label: "2"),
-          BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: "3"),
+          // item 개수는 5개가 최대값, 2 최소값
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "홈"),
+          BottomNavigationBarItem(icon: Icon(Icons.face), label: "사진"),
+          BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: "개인정보"),
         ],
         onTap: (i) {
           print("클릭됨 ${i}");
@@ -48,5 +44,16 @@ class _MainHolderState extends State<MainHolder> {
         },
       ),
     );
+  }
+}
+
+class ThirdPage extends StatelessWidget {
+  const ThirdPage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Center(child: Text("Third Page"));
   }
 }
