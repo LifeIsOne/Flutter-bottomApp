@@ -26,15 +26,39 @@ class MainHolder extends StatefulWidget {
 }
 
 class _MainHolderState extends State<MainHolder> {
+  int _index = 0;
+
   @override
   Widget build(BuildContext context) {
+    // 통신코드
     return Scaffold(
       body: IndexedStack(
+        index: _index,
         children: [
           Center(child: Text("First Page")),
           Center(child: Text("Second Page")),
           Center(child: Text("Third Page")),
         ],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: "홈1",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.face),
+            label: "홈2",
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.mobile_friendly),
+            label: "홈3",
+          ),
+        ],
+        onTap: (i) {
+          print("클릭됨 ${i}");
+          _index = 1;
+        },
       ),
     );
   }
