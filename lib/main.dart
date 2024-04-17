@@ -41,23 +41,22 @@ class _MainHolderState extends State<MainHolder> {
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        selectedItemColor: Colors.orange,
+        unselectedItemColor: Colors.black,
+        currentIndex: _index,
+        // 선택된 아이콘 색상표시
         items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: "홈1",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.face),
-            label: "홈2",
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.mobile_friendly),
-            label: "홈3",
-          ),
+          // item의 갯수는 최소 2개, 최대 5개
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: "1"),
+          BottomNavigationBarItem(icon: Icon(Icons.face), label: "2"),
+          BottomNavigationBarItem(icon: Icon(Icons.ac_unit), label: "3"),
         ],
         onTap: (i) {
           print("클릭됨 ${i}");
-          _index = 1;
+          _index = i;
+          setState(() {});
         },
       ),
     );
