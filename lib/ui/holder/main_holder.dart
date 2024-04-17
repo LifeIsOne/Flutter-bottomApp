@@ -1,4 +1,8 @@
+import 'package:bottom_app/ui/holder/second/second_page.dart';
+import 'package:bottom_app/ui/holder/third/third_page.dart';
 import 'package:flutter/material.dart';
+
+import 'first/first_page.dart';
 
 class MainHolder extends StatefulWidget {
   const MainHolder({
@@ -19,9 +23,9 @@ class _MainHolderState extends State<MainHolder> {
       body: IndexedStack(
         index: _index,
         children: [
-          Center(child: Text("First Page")),
-          Center(child: Text("Second Page")),
-          Center(child: Text("Third Page")),
+          FirstPage(),
+          SecondPage(),
+          ThirdPage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
